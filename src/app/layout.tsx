@@ -13,26 +13,29 @@ const geistMono = Geist_Mono({
 });
 
 export const metadata: Metadata = {
-  title: "SEO Demo App",
-  description: "A powerful SEO optimized demo application built with Next.js.",
+  metadataBase: new URL("https://seo-demo-app-two.vercel.app"),
+  title: "SEO Demo App - Next.js Powered",
+  description: "A powerful SEO optimized demo application built with Next.js. Experience modern web development with optimal search engine visibility.",
   keywords: [
     "SEO",
     "Next.js",
     "Search Engine Optimization",
     "Demo App",
-    "Open Graph"
+    "Open Graph",
+    "Web Development"
   ],
+  authors: [{ name: "Your Name" }],
   openGraph: {
-    title: "SEO Demo App",
-    description: "A powerful SEO optimized demo application built with Next.js.",
-    url: "https://seo-demo-app-two.vercel.app/",
+    title: "SEO Demo App - Next.js Powered",
+    description: "A powerful SEO optimized demo application built with Next.js. Experience modern web development with optimal search engine visibility.",
+    url: "/",
     siteName: "SEO Demo App",
     images: [
       {
-        url: "https://seo-demo-app-two.vercel.app/og-image.jpg",
+        url: "/og-image.jpg",
         width: 1200,
         height: 630,
-        alt: "SEO Demo App Thumbnail",
+        alt: "SEO Demo App - Next.js Application",
       }
     ],
     locale: "en_US",
@@ -40,9 +43,24 @@ export const metadata: Metadata = {
   },
   twitter: {
     card: "summary_large_image",
-    title: "SEO Demo App",
-    description: "A powerful SEO optimized demo application built with Next.js.",
-    images: ["https://seo-demo-app-two.vercel.app/og-image.jpg"],
+    title: "SEO Demo App - Next.js Powered",
+    description: "A powerful SEO optimized demo application built with Next.js. Experience modern web development with optimal search engine visibility.",
+    images: ["/og-image.jpg"],
+    creator: "@yourtwitterhandle",
+  },
+  robots: {
+    index: true,
+    follow: true,
+    googleBot: {
+      index: true,
+      follow: true,
+      "max-video-preview": -1,
+      "max-image-preview": "large",
+      "max-snippet": -1,
+    },
+  },
+  verification: {
+    google: "your-google-verification-code",
   },
 };
 
@@ -53,9 +71,6 @@ export default function RootLayout({
 }) {
   return (
     <html lang="en">
-      {/* required for metadata injection */}
-      <head />
-
       <body className={`${geistSans.variable} ${geistMono.variable} antialiased`}>
         {children}
       </body>
