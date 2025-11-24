@@ -1,4 +1,15 @@
+import { Metadata } from "next";
 import Image from "next/image";
+
+export const metadata: Metadata = {
+  title: "Dashboard",
+  description: "Manage your DevQuest activity.",
+  openGraph: {
+    title: "Dashboard",
+    description: "Manage your DevQuest activity.",
+    images: ["/og-image.jpg"]
+  }
+};
 
 export default function Home() {
   return (
