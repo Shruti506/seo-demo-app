@@ -12,7 +12,7 @@ const geistMono = Geist_Mono({
   subsets: ["latin"],
 });
 
-export const metadata = {
+export const metadata: Metadata = {
   title: "SEO Demo App",
   description: "A powerful SEO optimized demo application built with Next.js.",
   keywords: [
@@ -29,34 +29,34 @@ export const metadata = {
     siteName: "SEO Demo App",
     images: [
       {
-        url: "/og-image.jpg", 
+        url: "https://seo-demo-app-two.vercel.app/og-image.jpg",
         width: 1200,
         height: 630,
-        alt: "SEO Demo App Thumbnail"
+        alt: "SEO Demo App Thumbnail",
       }
     ],
     locale: "en_US",
-    type: "website"
+    type: "website",
   },
   twitter: {
     card: "summary_large_image",
     title: "SEO Demo App",
     description: "A powerful SEO optimized demo application built with Next.js.",
-    images: ["/og-image.jpg"] 
-  }
+    images: ["https://seo-demo-app-two.vercel.app/og-image.jpg"],
+  },
 };
 
 export default function RootLayout({
   children,
-}: Readonly<{
+}: {
   children: React.ReactNode;
-}>) {
+}) {
   return (
     <html lang="en">
+      {/* required for metadata injection */}
       <head />
-      <body
-        className={`${geistSans.variable} ${geistMono.variable} antialiased`}
-      >
+
+      <body className={`${geistSans.variable} ${geistMono.variable} antialiased`}>
         {children}
       </body>
     </html>
